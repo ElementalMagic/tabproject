@@ -15,6 +15,10 @@ export class LinksService {
   postLinks(link: Link): Observable<Link> {
     return this.http.post<Link>('/api/links/', link);
   }
+
+  deleteLink(id: string): Observable<{message: string}> {
+    return this.http.delete<{message: string}>(`/api/links/${id}`);
+  }
 }
 
 export interface Link {
